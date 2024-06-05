@@ -18,6 +18,12 @@
     --fs-3: 1rem;
     --fs-4: 1.25rem;
     --fs-5: 1.25rem;
+    --fw-1: 100;
+    --fw-2: 200;
+    --fw-3: 400;
+    --fw-4: 600;
+    --fw-5: 800;
+    --font-weight: var(--fw-3);
 
     --width-line: 0.11rem;
     --width-shadow: calc(var(--width-line)*2.5);
@@ -58,7 +64,7 @@ html {
     /* font-family: system-ui; */
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: var(--font-weight);
     font-style: normal;
     background: var(--color-canvas);
     color: var(--color-default);
@@ -135,9 +141,9 @@ h2.danger, p.danger, span.danger { color: var(--color-danger); }
 
 span { font-size: 1em; }
 h1 { font-size: 1rem; }
-h2 { font-size: var(--fs-4); font-family: Palatino; }
-h1.serif, h2.serif, p.serif, a.serif, span.serif { font-family: Palatino; }
-div.serif h1, div.serif h2, div.serif p, div.serif a, div.serif span { font-family: Palatino; }
+h2 { font-size: var(--fs-4); }
+
+sub, sup { font-size: var(--fs-1); }
 
 div.oneline > * { display: inline-block; margin-left: var(--layout-oneline-gap-left); margin-right: var(--layout-oneline-gap-right); }
 div.oneline i { font-size: 0.85em; margin-left: var(--layout-oneline-i-gap); margin-right: var(--layout-oneline-i-gap);}
@@ -253,5 +259,6 @@ button[type=submit], {
     :root {
         --size-rem: 40px;
         --width-search: 100%;
+        --font-weight: var(--fw-4);
     }
 }
