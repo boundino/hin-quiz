@@ -124,21 +124,28 @@ def quiz():
     session["used_questions"].append(question["id"])
 
     reward = get_ones_reward()
+    rewards_empty = False
     if not reward:
         if session['ncorr'] >= 3:
             rewards = db.execute(
                 'SELECT * FROM rewards WHERE assign_to IS ?', (None,)
             ).fetchall()
 
+            if not rewards:
+                rewards = db.execute(
+                    'SELECT * FROM rewards'
+                ).fetchall()
+                rewards_empty = True
+                print("empty")
+                
             reward = random.choice(rewards)
-            if g.user["id"] != 1:
+            if g.user["id"] != 1 and not rewards_empty:
                 db.execute(
                     'UPDATE rewards SET assign_to = ? WHERE id = ?', (g.user["id"], reward["id"])
                 )
                 db.commit()
 
-    # !! add one tag to identify all rewards are gone
-    return render_template('gdr/quiz.html', question=question, reward=reward)
+    return render_template('gdr/quiz.html', question=question, reward=reward, rewards_empty=rewards_empty)
 
 @bp.before_app_request
 def load_logged_in_user():

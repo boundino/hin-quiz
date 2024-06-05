@@ -13,6 +13,8 @@
         <p><span class="confirm">Congrats!</span> You got <span class="highlight">{{ reward["title"] }}</span>:</p>
         {% if g.user["id"] == 1 %}
           <p class="dim">but sorry no prize for guest...</p>
+        {% elif rewards_empty %}
+          <p class="dim">but sorry all prizes are gone...</p>
         {% endif %}
       </div>
       <div><img src="{{ url_for('static', filename=reward["path_to"]) }}"></img></div>
