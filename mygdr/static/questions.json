@@ -26,7 +26,7 @@
             "answer" : 0
         },
         {
-            "question" : "Which one is NOT an advantage of measuring fully reconstructed heavy-flavor hadrons compared to measuring decayed leptons?",
+            "question" : "Which one is <span class=\"highlight\">NOT</span> an advantage of measuring fully reconstructed heavy-flavor hadrons compared to measuring decayed leptons?",
             "options" : [ "Better statistics",
                           "Better control of kinematics of the heavy-flavor hadrons",
                           "Being able to distinguish the type of the heavy-flavor hadrons"
@@ -34,7 +34,7 @@
             "answer" : 0
         },
         {
-            "question" : "To which effect is the nuclear modification factor of D mesons at low p<sub>T</sub> NOT sensitive in A-A collisions?",
+            "question" : "To which effect is the nuclear modification factor of D mesons at low p<sub>T</sub> <span class=\"highlight\">NOT</span> sensitive in A-A collisions?",
             "options" : [ "Nuclear PDF",
                           "Collective flow",
                           "Radiative energy loss"
@@ -43,14 +43,14 @@
         },
         {
             "question" : "Which result is found to be significantly different between LHC and RHIC?",
-            "options" : [ "Y(1S) nuclear modification factors at same Npart",
-                          "p<sub>T</sub>-integrated J/&psi; nuclear modification factors at large N<sub>part</sub>",
+            "options" : [ "Y(1S) nuclear modification factors",
+                          "p<sub>T</sub>-integrated J/&psi; nuclear modification factors in central events",
                           "D<sup>0</sup> meson v<sub>2</sub> vs p<sub>T</sub>"
                         ],
             "answer" : 1
         },
         {
-            "question" : "Which one is NOT a good variable to classify a heavy-flavor hadron signal from combinatorial backgrounds?",
+            "question" : "Which one is <span class=\"highlight\">NOT</span> a good variable to classify a heavy-flavor hadron signal from combinatorial backgrounds?",
             "options" : [ "Decay length",
                           "Secondary vertex probability",
                           "Azimuthal angle"
@@ -58,12 +58,20 @@
             "answer" : 2
         },
         {
-            "question" : "Which one will NOT cause different modifications on yields of J/&psi; and &psi;(2S) in pA collisions?",
+            "question" : "Which one will <span class=\"highlight\">NOT</span> cause different modifications on yields of J/&psi; and &psi;(2S) in pA collisions?",
             "options" : [ "Nuclear PDF",
                           "Comover interactions",
                           "Recombinations"
                         ],
             "answer" : 0
+        },
+        {
+            "question" : "Which one is the most important feature / the biggest challenge for the measurements of quarkonium excited states in heavy-ion collisions now?",
+            "options" : [ "Large rapidity acceptance",
+                          "Good invariant mass resolution",
+                          "Good secondary-vertex reconstruction capability"
+                        ],
+            "answer" : 1
         }
     ]
 }
