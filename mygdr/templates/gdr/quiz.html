@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block nav_middle %}
+  {% if not reward %}
+    <p><span class="confirm">{{ session["ncorr"] }}</span> / 3</p>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if reward %}
+    <div class="column-flex space-5 text-center">
+      <div class="column-flex space-2">
+        <p><span class="confirm">Congrats!</span> You got <span class="highlight">{{ reward["title"] }}</span>:</p>
+        {% if g.user["id"] == 1 %}
+          <p class="dim">but sorry no prize for guest...</p>
+        {% endif %}
+      </div>
+      <div><img src="{{ url_for('static', filename=reward["path_to"]) }}"></img></div>
+    </div>
+  {% else %} 
+    <form method="post" class="column-flex space-5">
+      <div class="textarea" id="question">{{ question["question"] | safe }}</div>
+      <!-- <hr class="secdiv"> -->
+      <div class="column-flex space-2">
+        <button type="submit" name="answer" value="0" class="regular highlight">{{ question["option_a"] | safe }}</button>
+        <button type="submit" name="answer" value="1" class="regular highlight">{{ question["option_b"] | safe }}</button>
+        <button type="submit" name="answer" value="2" class="regular highlight">{{ question["option_c"] | safe }}</button>
+      </div>
+      <!-- <div class="section">
+           <button type="submit" class="solid confirm">Check</button>
+           </div> -->
+    </form>
+  {% endif %}
+{% endblock %}

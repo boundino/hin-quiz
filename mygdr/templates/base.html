@@ -1,0 +1,37 @@
+<!doctype html>
+<title>{% block title %}{% endblock %}</title>
+<script src="https://kit.fontawesome.com/1b7d79a1ac.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename="favicon.ico") }}"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+<nav>
+  <ul class="nav-left">
+    <li><a href="{{ url_for('gdr.index') }}" class="silent"><i class="fa-solid fa-xmark"></i></a></li>
+  </ul>
+  <ul>{% block nav_middle %}{% endblock %}</ul>
+  <ul class="nav-right">
+    <!-- <li><p>{{ g.user["username"] if g.user else "" }}</p></li> -->
+    <li><p class="danger" style="opacity: 0;"><i class="fa-solid fa-heart"></i></p></li>
+  </ul>
+</nav>
+<hr>
+
+<section class="application-main">
+  <div class="container-application">
+    <div class="content">
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</section>
+
+<section class="footer">
+  <p>GDR-QCD HIC summer school &copy; 2024 Jing</p>
+</section>
+
